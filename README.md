@@ -5,10 +5,10 @@ Sample app to reproduce https://github.com/rails/rails/issues/8213
 
 MyModule is referenced by ApplicationController#index and contains a top level autoload.
 
-   autoload :MyModuleFoo, 'my_module/something_optional'
+    autoload :MyModuleFoo, 'my_module/something_optional'
 
 Accessing the root path of this application results in my_module/something_optional.rb
-being loaded even though the the MyModuleFoo constant was never referenced. In order
+being loaded even though the MyModuleFoo constant was never referenced. In order
 to reproduce immediately, I added config.reload_classes_only_on_change=false to config/application.rb.
 
     $ script/rails s
