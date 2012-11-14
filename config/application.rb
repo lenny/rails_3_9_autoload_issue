@@ -58,5 +58,7 @@ module Rails39AutoloadIssue
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+    
+    config.reload_classes_only_on_change = false
   end
 end
